@@ -8,7 +8,7 @@ function setup
 end
 
 function teardown
-    unmock uname -s
+    unmock uname
     set -g TERM_PROGRAM $____TERM_PROGRAM
     set -e ____TERM_PROGRAM
 end

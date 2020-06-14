@@ -2,8 +2,7 @@ source "$current_dirname/../functions/is:os.fish"
 source "$current_dirname/../functions/is:mac.fish"
 
 function teardown
-    unmock uname -s
-    unmock uname -r
+    unmock uname
 end
 
 @test "is:mac is true when the current OS is a MacOS" (

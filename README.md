@@ -33,19 +33,39 @@ directory structure.
 
 ## Functions
 
+### dict:\* - dict:empty, dict:get, dict:has_key, dict:keys, dict:set
+
+Functions to give fish behaviour similar to associative arrays found in `zsh`
+or bash 4. This is based on functions that I wrote for bash 3 and uses the
+same technique.
+
+```fish
+dict:set x y          # sets x{y} to an empty value
+dict:set x y 1        # sets x{y} to the value 1
+dict:set x y 1 2 3    # sets x{y} to the list value 1 2 3
+dict:get x y          # gets the value of x{y}
+dict:has_key x y      # true if key y exists in dictionary x
+dict:empty x          # true if there is no dictionary x
+dict:keys x           # the list of all keys in dictionary x
+```
+
 ### is:os — is:freebsd, is:linux, is:mac, is:ubuntu
 
 Tests that the current operating environment is the expected OS type. Most
 are implemented in terms of is:os, which is mostly a comparison tool for
 `uname -s`.
 
+`is:mac` can also test for a specific version of Mac OS.
+
 ```fish
 is:mac; and echo Yes; or echo No
+is:mac catalina; and echo Developer; or echo Normal
 ```
 
 ### is:mac-at-least
 
-Determines whether the MacOS version is at least the version specified:
+Determines whether the MacOS version is at least the version specified. This
+is deprecated and will be removed in the future.
 
 ```fish
 is:mac-at-least catalina; and echo Developer; or echo Normal
@@ -66,6 +86,7 @@ is:true yes; and echo yes
 is:true true; and echo yes
 is:true on; and echo yes
 is:true no; or echo no
+is:true foo; or echo no
 ```
 
 ### path:after, path:before, path:unique
@@ -138,7 +159,7 @@ echo $PATH # /usr/local/bin
 [MIT](LICENCE.md)
 
 [fish shell]: https://fishshell.com "friendly interactive shell"
-[Version]: https://img.shields.io/github/tag/halostatue/fish-kiex.svg?label=Version
-[![Version][]]: https://github.com/halostatue/fish-kiex/releases
+[Version]: https://img.shields.io/github/tag/halostatue/fish-utils-core.svg?label=Version
+[![Version][]]: https://github.com/halostatue/fish-utils-core/releases
 [Fisher]: https://github.com/jorgebucaran/fisher
 [fish]: https://github.com/fish-shell/fish-shell

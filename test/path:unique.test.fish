@@ -1,32 +1,57 @@
-function path:unique -d 'Ensures that the provided value is unique in $PATH or $CDPATH'
-    argparse -n(status function) -N1 'c/cdpath' 'a/append' 't/test' -- $argv
-    or return
+source "$current_dirname/../functions/path:unique.fish"
 
-    set -l var PATH
+set size (math (count $PATH) + 1)
 
-    test -z {$_flag_cdpath}
-    or set var CDPATH
-
-    set -l prepend true
-    test -z {$_flag_append}
-    or set prepend false
-
-    set -l test false
-    test -z {$_flag_test}
-    or set test true
-
-    set -l args $argv
-    $prepend
-    and set args $args[-1..1]
-
-    for item in $args
-        if $test
-            test -d $item
-            or continue
-        end
-
-        $prepend
-        and set $var $item (string match -vr "^$item\$" $$var)
-        or set $var (string match -vr "^$item\$" $$var) $item
-    end
+function setup
+    set -g ___tempdir (mktemp -d)
+    set -g ___path $PATH
+    set -g ___cdpath $CDPATH
 end
+
+function teardown
+    set -g PATH $___path
+    set -g CDPATH $___cdpath
+    set -ge ___path
+    set -ge ___cdpath
+
+    test -d $___tempdir; and rmdir $___tempdir
+    set -ge ___tempdir
+end
+
+@test 'path:unique /x prepends /x to $PATH' (
+    path:unique $___tempdir
+    contains -i $___tempdir $PATH
+) = 1
+
+@test 'path:unique /x --append appends /x to $PATH' (
+    path:unique $___tempdir --append
+    contains -i $___tempdir $PATH
+) = $size
+
+@test 'path:unique /x moves /x to the front if it already exists' (
+    set PATH $PATH $___tempdir
+    path:unique $___tempdir
+    contains -i $___tempdir $PATH
+) = 1
+
+@test 'path:unique /x --append moves /x to the tail if it already exists' (
+    set PATH $___tempdir $PATH
+    path:unique $___tempdir --append
+    contains -i $___tempdir $PATH
+) = $size
+
+@test 'path:unique /x --test does not add /x if it does not exist' -z (
+    rmdir $___tempdir
+    path:unique $___tempdir --test
+    contains -i $___tempdir $PATH
+)
+
+@test 'path:unique /x --test adds /x if it exists' (
+    path:unique $___tempdir --test
+    contains -i $___tempdir $PATH
+) = 1
+
+@test 'path:unique /x --cdpath prepends /x to $CDPATH' (
+    path:unique $___tempdir --cdpath
+    contains -i $___tempdir $CDPATH
+) = 1
