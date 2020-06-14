@@ -1,5 +1,5 @@
 function path:make_unique -d 'Makes sure that each entry in $PATH or $CDPATH is uniquqe, with order preserved.'
-    argparse -n(status function) -X0 'c/cdpath' -- $argv
+    argparse -X0 'c/cdpath' -- $argv
     or return
 
     set -l var PATH

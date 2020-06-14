@@ -25,6 +25,7 @@ fisher add halostatue/fish-utils-core
 
 Copy `functions/*.fish` to your fish configuration directory preserving the
 directory structure.
+
 </details>
 
 ### System Requirements
@@ -98,7 +99,7 @@ paths provided to the global path variable.
 #### path:unique Flags
 
 Without flags, `path:unique` and its wrappers will add the provided paths, in
-the provided order, to the beginning of the $PATH, even if the value was
+the provided order, to the beginning of the \$PATH, even if the value was
 already present. This means that:
 
 ```fish
@@ -111,11 +112,11 @@ echo $PATH # a b c /usr/local/bin
 - `-a`, `--append`: Appends the path list to the managed path. Not available
   on `path:before` and `path:after`.
 
-    ```fish
-    echo $PATH # b /usr/local/bin
-    path:unique --append a b c
-    echo $PATH # /usr/local/bin a b c
-    ```
+```fish
+echo $PATH # b /usr/local/bin
+path:unique --append a b c
+echo $PATH # /usr/local/bin a b c
+```
 
 - `-t`, `--test`: Only appends the provided path if it exists. Off by default.
 
@@ -125,7 +126,7 @@ Removes the provided path(s) from $PATH or $CDPATH.
 
 #### path:clean Flags
 
-Without flags, `path:clean` will remove the provided paths from $PATH. This
+Without flags, `path:clean` will remove the provided paths from \$PATH. This
 means that:
 
 ```fish
@@ -144,7 +145,7 @@ managed path variable will be preserved.
 
 #### path:make_unique Flags
 
-Without flags, `path:make_unique` will manage $PATH. This means that:
+Without flags, `path:make_unique` will manage \$PATH. This means that:
 
 ```fish
 echo $PATH # /usr/local/bin /usr/local/bin
@@ -158,8 +159,9 @@ echo $PATH # /usr/local/bin
 
 [MIT](LICENCE.md)
 
-[fish shell]: https://fishshell.com "friendly interactive shell"
-[Version]: https://img.shields.io/github/tag/halostatue/fish-utils-core.svg?label=Version
+[fish shell]: https://fishshell.com 'friendly interactive shell'
+[version]: https://img.shields.io/github/tag/halostatue/fish-utils-core.svg?label=Version
+
 [![Version][]]: https://github.com/halostatue/fish-utils-core/releases
 [Fisher]: https://github.com/jorgebucaran/fisher
 [fish]: https://github.com/fish-shell/fish-shell

@@ -1,5 +1,5 @@
 function dict:set -d 'Sets $name{$key}=$argv'
-    argparse -n(status function) -xq,e 'q/query' 'e/erase' -- $argv
+    argparse -xq,e 'q/query' 'e/erase' -- $argv
     or return
 
     set -l mode assign

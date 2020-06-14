@@ -1,5 +1,5 @@
 function path:unique -d 'Ensures that the provided value is unique in $PATH or $CDPATH'
-    argparse -n(status function) -N1 'c/cdpath' 'a/append' 't/test' -- $argv
+    argparse -N1 'c/cdpath' 'a/append' 't/test' -- $argv
     or return
 
     set -l var PATH

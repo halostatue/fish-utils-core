@@ -1,5 +1,5 @@
 function path:clean -d 'Clean the specified paths from $PATH or $CDPATH'
-    argparse -n(status function) -N1 'c/cdpath' -- $argv
+    argparse -N1 'c/cdpath' -- $argv
     or return
 
     set -l var PATH
