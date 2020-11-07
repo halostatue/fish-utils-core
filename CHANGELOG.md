@@ -1,5 +1,9 @@
 # fish-utils-core Changelog
 
+## 1.2
+
+- Adding helper functions for use in completions.
+
 ## 1.1.1
 
 - Removed unnecessary `-n(status function)` parameters to `argparse`.

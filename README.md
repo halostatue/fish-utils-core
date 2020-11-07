@@ -155,6 +155,55 @@ echo $PATH # /usr/local/bin
 
 - `-c`, `--cdpath`: Manages $CDPATH instead of $PATH.
 
+### Completion Helper Functions
+
+### __complete_no_subcommand
+
+A completion function generator that creates a completion function that knows
+about the subcommands of a command.
+
+```fish
+__complete_no_subcommand manage add remove
+```
+
+The above example will generate a function `__complete_no_subcommand__manage`
+that returns true if the current command-line arguments do not include `add`
+or `remove`.
+
+### __complete_pos_eq
+
+A completion function that tests whether the current argument position is the
+same as what is provided.
+
+```fish
+__complete_pos_eq 3
+```
+
+This will be true if the user is in the third argument position. Note that
+this will only work if there are no flags provided.
+
+### __complete_subcommands
+
+Returns true if the subcommand chain provided exists. Usable as a `complete`
+condition function. An extension of `__fish_seen_subcommand_from`, this looks
+for multi-part subcommands.
+
+Assuming a command `manage` that has a subcommand `add` which has further
+subcommands `group` and `user`, the following conditions would work:
+
+```fish
+__complete_no_subcommand manage add
+
+complete -c manage -e
+complete -c manage -n __complete_no_subcommand__manage -a add -d 'Add groups or users'
+complete -c manage -n '__complete_subcommands add' -a group -d 'Add a group'
+complete -c manage -n '__complete_subcommands add' -a user -d 'Add a user'
+complete -c manage -n '__complete_subcommands add group' --no-files -a group1 group2 -d 'Supported groups'
+complete -c manage -n '__complete_subcommands add users' --no-files -a user1 user2 -d 'Supported users'
+```
+
+In this case, `manage add group<Tab>` would show the completion options `group1` and `group2`
+
 ## License
 
 [MIT](LICENCE.md)
