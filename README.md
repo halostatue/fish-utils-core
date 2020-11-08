@@ -191,6 +191,8 @@ for multi-part subcommands.
 Assuming a command `manage` that has a subcommand `add` which has further
 subcommands `group` and `user`, the following conditions would work:
 
+Use `\*` to match any pattern.
+
 ```fish
 __complete_no_subcommand manage add
 

@@ -1,5 +1,10 @@
 # fish-utils-core Changelog
 
+## 1.2.1
+
+- Improve the `__complete_subcommands` helper function so that it is easier
+  to use.
+
 ## 1.2
 
 - Adding helper functions for use in completions.
