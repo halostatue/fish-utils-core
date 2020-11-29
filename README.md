@@ -8,6 +8,10 @@ functions that I consider core fucntions (which can be depended on existing
 for any plug-in that I create) and functions that are useful utilities,
 but not core functions.
 
+Note that with Fisher v4, `fishfile` dependencies are no longer supported, so
+if the plugin requires `halostatue/fish-utils-core`, it will need to be added
+explicitly as part of your dependencies.
+
 [![Version][]][]
 
 ## Installation
@@ -15,7 +19,8 @@ but not core functions.
 Install with [Fisher][] (recommended):
 
 ```fish
-fisher add halostatue/fish-utils-core
+fisher add halostatue/fish-utils-core # Fisher 3.x
+fisher install halostatue/fish-utils-core # Fisher 4.0+
 ```
 
 <details>
