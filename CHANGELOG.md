@@ -1,5 +1,27 @@
 # fish-utils-core Changelog
 
+## 2.0.0
+
+- Removed the `dict:*` functions from this library and moved it to
+  `halostatue/fish-dict@v1.x`.
+
+- Removed `is:mac-at-least`.
+
+- Removed `path:after`, `path:before` as unnecessary ports of functionality
+  missing from zsh. Fish supports this natively: `set -a VAR value` (append) and
+  `set -p VAR value` (prepend). Newer versions of Fish also include
+  `fish_add_path`, which handles this more elegantly and can modify either
+  `$PATH` or `$fish_user_paths` directly in a stable manner.
+
+- Reworked `path:clean` and `path:unique` as `list:clean` and `list:uniq`. These
+  do not work on variables directly, but are instead intended to be used as
+  values to `set`.
+
+- Removed `path:make_unique`. There is no replacement.
+
+- Significant update to the tests, plus fixed an issue where the functions being
+  tested are not the functions in the repo.
+
 ## 1.2.1
 
 - Improve the `__complete_subcommands` helper function so that it is easier

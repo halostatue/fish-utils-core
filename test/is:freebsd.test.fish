@@ -1,5 +1,7 @@
-source "$current_dirname/../functions/is:os.fish"
-source "$current_dirname/../functions/is:freebsd.fish"
+@echo (status basename)
+
+source (status dirname)"/../functions/is:os.fish"
+source (status dirname)"/../functions/is:freebsd.fish"
 
 function teardown
     unmock uname

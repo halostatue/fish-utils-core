@@ -1,34 +1,39 @@
-source "$current_dirname/../functions/is:os.fish"
-source "$current_dirname/../functions/is:mac.fish"
-source "$current_dirname/../functions/is:mac-terminal.fish"
+@echo (status basename)
 
-function setup
-    mock uname -s 0 "echo Darwin"
-    set -g ____TERM_PROGRAM $TERM_PROGRAM
-end
+source (status dirname)"/../functions/is:os.fish"
+source (status dirname)"/../functions/is:mac.fish"
+source (status dirname)"/../functions/is:mac-terminal.fish"
 
 function teardown
     unmock uname
-    set -g TERM_PROGRAM $____TERM_PROGRAM
-    set -e ____TERM_PROGRAM
 end
 
-@test "is:mac-terminal is false when the current OS is not a MacOS" (
+@test "is:mac-terminal is false when the current OS is not a macOS" (
     mock uname -s 0 "echo Nope"
     is:mac-terminal
 ) $status = 1
 
 @test "is:mac-terminal is true when using iTerm.app" (
-    set TERM_PROGRAM iTerm.app
-    is:mac-terminal
+    mock uname -s 0 "echo Darwin"
+    __CFBundleIdentifier=com.googlecode.iterm2 is:mac-terminal
 ) $status = 0
 
 @test "is:mac-terminal is true when using Terminal.app" (
-    set TERM_PROGRAM Apple_Terminal
-    is:mac-terminal
+    mock uname -s 0 "echo Darwin"
+    __CFBundleIdentifier=com.apple.Terminal is:mac-terminal
+) $status = 0
+
+@test "is:mac-terminal is true when using Alacritty" (
+    mock uname -s 0 "echo Darwin"
+    __CFBundleIdentifier=io.alacritty is:mac-terminal
+) $status = 0
+
+@test "is:mac-terminal is true when using kitty" (
+    mock uname -s 0 "echo Darwin"
+    __CFBundleIdentifier=net.kovidgoyal.kitty is:mac-terminal
 ) $status = 0
 
 @test "is:mac-terminal is false when using anything else" (
-    set TERM_PROGRAM
-    is:mac-terminal
+    mock uname -s 0 "echo Darwin"
+    __CFBundleIdentifier=somethingUnknown is:mac-terminal
 ) $status = 1

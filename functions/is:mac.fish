@@ -1,7 +1,9 @@
-function is:mac -d 'Returns true if the OS is MacOS (Darwin). If a version value is specified, must be running at least that version.'
-    is:os darwin; or return 1
+function is:mac -d 'Returns true if the OS is macOS (Darwin). If a version value is specified, must be running at least that version.'
+    is:os darwin
+    or return 1
 
-    test (count $argv) -eq 0; and return 0
+    test (count $argv) -eq 0
+    and return 0
 
     set -l darwin_version
     set -l current_version (uname -r | string replace -ra '\.[0-9]*' '')
@@ -29,6 +31,10 @@ function is:mac -d 'Returns true if the OS is MacOS (Darwin). If a version value
             set darwin_version 18
         case 10.15 '10.15.*' catalina
             set darwin_version 19
+        case 10.16 '10.16.*' 11.0 '11.*' 'big sur'
+            set darwin_version 20
+        case 12.0 '12.*' monterey
+            set darwin_version 21
         case '*'
             return 1
     end

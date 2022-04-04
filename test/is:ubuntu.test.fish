@@ -1,6 +1,8 @@
-source "$current_dirname/../functions/is:os.fish"
-source "$current_dirname/../functions/is:linux.fish"
-source "$current_dirname/../functions/is:ubuntu.fish"
+@echo (status basename)
+
+source (status dirname)"/../functions/is:os.fish"
+source (status dirname)"/../functions/is:linux.fish"
+source (status dirname)"/../functions/is:ubuntu.fish"
 
 function teardown
     unmock uname

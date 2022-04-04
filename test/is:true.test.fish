@@ -1,4 +1,6 @@
-source "$current_dirname/../functions/is:true.fish"
+@echo (status basename)
+
+source (status dirname)"/../functions/is:true.fish"
 
 @test "is:true returns false if given no test value" (
     is:true
@@ -10,6 +12,6 @@ for v in 1 y yes t true o on Y YES T TRUE O ON
     ) $status = 0
 end
 
-@test "is:true returns true if the value is not a truthy value" (
+@test "is:true returns false if the value is not a truthy value" (
     is:true 0
 ) $status = 1
