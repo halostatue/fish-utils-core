@@ -19,8 +19,7 @@ to be added explicitly as part of your dependencies.
 Install with [Fisher][] (recommended):
 
 ```fish
-fisher add halostatue/fish-utils-core@v2.x # Fisher 3.x
-fisher install halostatue/fish-utils-core@v2.x # Fisher 4.0+
+fisher install halostatue/fish-utils-core@v2.x
 ```
 
 <details>
@@ -45,11 +44,12 @@ Tests that the current operating environment is the expected OS type. Most
 are implemented in terms of is:os, which is mostly a comparison tool for
 `uname -s`.
 
-`is:mac` can also test for a specific version of macOS by name or version.
+`is:mac` can also test for a specific version of macOS by name or version,
+up to the newest beta version Ventura (macOS 13).
 
 ```fish
 is:mac; and echo Yes; or echo No
-is:mac catalina; and echo Developer; or echo Normal
+is:mac ventura; and echo Developer; or echo Normal
 ```
 
 ### is:mac-terminal

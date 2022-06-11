@@ -1,11 +1,17 @@
 # fish-utils-core Changelog
 
+## 2.1.0
+
+- Fixed a bug in `is:mac` where modern versions of macOS were not properly
+  detected, and improved the comparison mechanism. Added support for versions up
+  to Ventura (macOS 13).
+
 ## 2.0.0
 
 - Removed the `dict:*` functions from this library and moved it to
   `halostatue/fish-dict@v1.x`.
 
-- Removed `is:mac-at-least`.
+- Removed `is:mac-at-least`. There is no replacement.
 
 - Removed `path:after`, `path:before` as unnecessary ports of functionality
   missing from zsh. Fish supports this natively: `set -a VAR value` (append) and
