@@ -3,7 +3,7 @@ function __macos_version_to_comparable
     or return 1
 
     switch (string lower $argv)
-        case 10.5 '10.5.*' leoopard
+        case 10.5 '10.5.*' leopard
             echo 100500
         case 10.6 '10.6.*' snowleopard 'snow leopard'
             echo 100600
