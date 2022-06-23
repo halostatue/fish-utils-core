@@ -1,5 +1,16 @@
 # fish-utils-core Changelog
 
+## 2.1.1
+
+- Fixed a bug in `__macos_version_to_comparable` and `is:mac` where comparisons
+  could not be performed correctly.
+
+- Switched from using `matchai/fish-mock` to `IlanCosman/clownfish` for mocking.
+
+- Added additional documentation files.
+
+- Added a makefile for ease of testing.
+
 ## 2.1.0
 
 - Fixed a bug in `is:mac` where modern versions of macOS were not properly
