@@ -1,3 +1,4 @@
+# @halostatue/fish-utils-core:functions/is/mac.fish
 function is:mac -d 'Returns true if the OS is macOS (Darwin). If a version value is specified, must be running at least that version.'
     is:os darwin
     or return 1

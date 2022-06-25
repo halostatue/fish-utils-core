@@ -1,3 +1,4 @@
+# @halostatue/fish-utils-core:functions/list/clean.fish
 function list:clean -d 'Remove first list values from second list values'
     set -q argv[1]
     or return 0

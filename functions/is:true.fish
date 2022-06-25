@@ -1,3 +1,4 @@
+# @halostatue/fish-utils-core:functions/is/true.fish
 function is:true
     test -z $argv[1]
     and return 1
