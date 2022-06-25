@@ -1,5 +1,15 @@
 # fish-utils-core Changelog
 
+## NEXT
+
+- Deprecated `__complete_no_subcommand`, `__complete_pos_eq`, and
+  `__complete_subcommands`. They were all created for a plug-in that I am no
+  longer working on and will never release. They’re all fairly complex and of
+  questionable overall value.
+
+- Added comments to help identify the source of plugins when installed with
+  Fisher.
+
 ## 2.1.1
 
 - Fixed a bug in `__macos_version_to_comparable` and `is:mac` where comparisons

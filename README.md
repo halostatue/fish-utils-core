@@ -120,6 +120,9 @@ The above example will generate a function `__complete_no_subcommand__manage`
 that returns true if the current command-line arguments do not include `add`
 or `remove`.
 
+This function is deprecated and will be removed in the next major version. (It
+was added for a fish plug-in that I did not finish creating.)
+
 ### \_\_complete_pos_eq
 
 A completion function that tests whether the current argument position is the
@@ -131,6 +134,9 @@ __complete_pos_eq 3
 
 This will be true if the user is in the third argument position. Note that
 this will only work if there are no flags provided.
+
+This function is deprecated and will be removed in the next major version. (It
+was added for a fish plug-in that I did not finish creating.)
 
 ### \_\_complete_subcommands
 
@@ -155,6 +161,9 @@ complete -c manage -n '__complete_subcommands add users' --no-files -a user1 use
 ```
 
 In this case, `manage add group<Tab>` would show the completion options `group1` and `group2`
+
+This function is deprecated and will be removed in the next major version. (It
+was added for a fish plug-in that I did not finish creating.)
 
 ## License
 

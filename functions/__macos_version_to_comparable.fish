@@ -1,3 +1,4 @@
+# @halostatue/fish-utils-core/functions/__macos_version_to_comparable.fish
 function __macos_version_to_comparable
     is:os darwin
     or return 1

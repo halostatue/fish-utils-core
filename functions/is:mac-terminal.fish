@@ -1,3 +1,4 @@
+# @halostatue/fish-utils-core:functions/is/mac-terminal.fish
 function is:mac-terminal -d 'Returns true if currently using a well-known macOS terminal'
     is:mac
     or return 1

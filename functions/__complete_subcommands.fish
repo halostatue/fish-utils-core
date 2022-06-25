@@ -1,3 +1,4 @@
+# @halostatue/fish-utils-core/functions/__complete_subcommands.fish
 function __complete_subcommands --description 'Returns true if the subcommand chain provided exists'
     set -l cmd (commandline -poc)
     set -e cmd[1]
@@ -11,10 +12,10 @@ function __complete_subcommands --description 'Returns true if the subcommand ch
     set -l i
 
     for i in (seq 1 $argc)
-      test $argv[$i] = '*'; and continue
-      test $argv[$i] = $cmd[$i]; and continue
+        test $argv[$i] = '*'; and continue
+        test $argv[$i] = $cmd[$i]; and continue
 
-      return 1
+        return 1
     end
 
     return 0
