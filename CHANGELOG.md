@@ -1,14 +1,35 @@
 # fish-utils-core Changelog
 
-## NEXT
+## 3.0.0 / 2024-12-01
 
-- Deprecated `__complete_no_subcommand`, `__complete_pos_eq`, and
+- Removed `__complete_no_subcommand`, `__complete_pos_eq`, and
   `__complete_subcommands`. They were all created for a plug-in that I am no
-  longer working on and will never release. They’re all fairly complex and of
+  longer working on and will never release. They're all fairly complex and of
   questionable overall value.
+
+- Removed `is:true` without replacement.
+
+- Renamed `is:mac-terminal` to `is_mac_terminal` and extended it to check
+  against specific terminals (`is_mac_terminal iTerm2`).
+
+- Rewrote `is:linux` to use `/etc/os-release` instead of `lsb_release` or
+  `/proc/version`. Both the `ID` and `ID_LIKE` values will be checked, so a
+  RedHat Enterprise Linux system can be checked with `fedora`.
+
+- Removed `is:ubuntu`; use `is_linux ubuntu` instead.
+
+- Renamed remaining `is:*` and `list:*` functions to `is_` and `list_`.
+
+- Added macOS Sequoia to `__macos_version_to_comparable` and made it easier to
+  work with for the current version (`__macos_version_to_comparable --current`).
 
 - Added comments to help identify the source of plugins when installed with
   Fisher.
+
+- Added a GitHub Action for testing. Converted makefile to casey/just.
+
+- Changed default branch to `main` from `master`. From this release, release
+  tags will drop `.x` (e.g., `@v3`, `@v3.0`).
 
 ## 2.1.1
 
@@ -40,7 +61,7 @@
   `fish_add_path`, which handles this more elegantly and can modify either
   `$PATH` or `$fish_user_paths` directly in a stable manner.
 
-- Reworked `path:clean` and `path:unique` as `list:clean` and `list:uniq`. These
+- Reworked `path:clean` and `path:unique` as `list_clean` and `list_uniq`. These
   do not work on variables directly, but are instead intended to be used as
   values to `set`.
 
@@ -51,8 +72,8 @@
 
 ## 1.2.1
 
-- Improve the `__complete_subcommands` helper function so that it is easier
-  to use.
+- Improve the `__complete_subcommands` helper function so that it is easier to
+  use.
 
 ## 1.2
 
@@ -64,8 +85,8 @@
 
 ## 1.1
 
-- Add `fishtape` tests for all functions. This required rewriting some
-  functions to be more testable (specifically `is:ubuntu`).
+- Add `fishtape` tests for all functions. This required rewriting some functions
+  to be more testable (specifically `is:ubuntu`).
 
 - Add various `dict:*` functions for dictionary-like operations.
 
@@ -76,6 +97,6 @@
 ## 1.0
 
 - Create halostatue/fish-utils-core as a trimmed-down version of
-  halostatue/fish-utils. This implements the _minimum_ functionality required
-  to support other fish plug-ins I have created. halostatue/fish-utils now
-  depends on halostatue/fish-utils-core.
+  halostatue/fish-utils. This implements the _minimum_ functionality required to
+  support other fish plug-ins I have created. halostatue/fish-utils now depends
+  on halostatue/fish-utils-core.
