@@ -20,4 +20,4 @@ jobs:
         with:
           plugin-manager: fisher
           plugins: IlanCosman/clownfish
-      - uses: fish-shop/run-fishtape-tests@v2.3.21
+      - uses: fish-shop/run-fishtape-tests@v2.3.22
