@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: extractions/setup-just@v2
-      - uses: fish-shop/install-fish-shell@v1.0.34
+      - uses: fish-shop/install-fish-shell@v1.0.36
       - uses: fish-shop/indent-check@v1.0.24
       - uses: fish-shop/syntax-check@v2.2.24
       - uses: fish-shop/install-plugin@v2.3.26
