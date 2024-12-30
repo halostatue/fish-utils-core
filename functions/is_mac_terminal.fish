@@ -5,7 +5,7 @@ function is_mac_terminal -d 'Checks that the current terminal is well-known'
     or return 1
 
     if set --query argv[1]
-        set --function match (string loser $argv)
+        set --function match (string lower $argv)
 
         switch $match
             case alacritty
