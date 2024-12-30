@@ -7,9 +7,9 @@ function is_linux -d 'Check if the current OS is Linux with optional flavour che
     set --query argv[1]
     or return 0
 
-    set --local id (cat /etc/os-release | string replace --filter --regex '^ID="?([^"]+)"?' '$1')
-    set --local id_like (cat /etc/os-release | string replace --filter --regex '^ID_LIKE="?([^"]+)"?' '$1')
-    set --local match (string lower $argv[1])
+    set --function id (cat /etc/os-release | string replace --filter --regex '^ID="?([^"]+)"?' '$1')
+    set --function id_like (cat /etc/os-release | string replace --filter --regex '^ID_LIKE="?([^"]+)"?' '$1')
+    set --function match (string lower $argv[1])
 
     test $id = $match
     and return 0
