@@ -1,5 +1,22 @@
 # fish-utils-core Changelog
 
+## 3.1.0 / 2024-12-29
+
+- `is_mac_terminal`:
+
+  - Added GhosTTY as a supported terminal.
+  - Fixed bugs when provided a terminal parameter name.
+
+- Switched from `set --local` to `set --function`.
+
+- Added completions.
+
+- Update GitHub Actions for testing.
+
+- Update Code of Conduct to Contributor Covenant 2.1.
+
+- Update documentation.
+
 ## 3.0.0 / 2024-12-01
 
 - Removed `__complete_no_subcommand`, `__complete_pos_eq`, and

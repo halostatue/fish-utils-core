@@ -6,7 +6,7 @@ Core utility functions for [fish shell][fish shell].
 
 ## Installation
 
-Install with [Fisher][Fisher] (recommended):
+Install with [Fisher][Fisher]:
 
 ```fish
 fisher install halostatue/fish-utils-core@v3
@@ -40,8 +40,8 @@ is_mac sequoia; and echo Sequoia; or echo Not macOS or Sequoia
 Returns true if `fish` is running on macOS and in a recognized terminal based on
 the terminal bundle ID as reported in `$__CFBundleId`.
 
-Currently, Alacritty, iTerm2, Apple Terminal, KiTTY, and Wezterm are recognized.
-Contributions are welcome to expand this.
+Currently, Alacritty, iTerm2, Apple Terminal, kitty, Wezterm, and GhosTTY are
+recognized. Contributions are welcome to expand this.
 
 ### `list_unique`
 
@@ -83,7 +83,7 @@ Convert the provided macOS version to a comparable number. The special version
 'current' or '--current' will use `/usr/bin/sw_vers` to produce a value. Special
 names are recognized from Leopard to Sequoia.
 
-## License
+## Licence
 
 [MIT](LICENCE.md)
 
