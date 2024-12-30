@@ -34,7 +34,27 @@ end
     __CFBundleIdentifier=net.kovidgoyal.kitty is_mac_terminal
 ) $status = 0
 
+@test "is_mac_terminal is true when using GhosTTY" (
+    mock uname -s "echo Darwin"
+    __CFBundleIdentifier=com.mitchellh.ghostty is_mac_terminal
+) $status = 0
+
+@test "is_mac_terminal is true when using GhosTTY with parameter ghost" (
+    mock uname -s "echo Darwin"
+    __CFBundleIdentifier=com.mitchellh.ghostty is_mac_terminal ghost
+) $status = 0
+
+@test "is_mac_terminal is true when using kitty with parameter and is case insensitive" (
+    mock uname -s "echo Darwin"
+    __CFBundleIdentifier=net.kovidgoyal.kitty is_mac_terminal KiTTy
+) $status = 0
+
 @test "is_mac_terminal is false when using anything else" (
     mock uname -s "echo Darwin"
     __CFBundleIdentifier=somethingUnknown is_mac_terminal
+) $status = 1
+
+@test "is_mac_terminal is true when using GhosTTY with unknown parameter" (
+    mock uname -s "echo Darwin"
+    __CFBundleIdentifier=com.mitchellh.ghostty is_mac_terminal unknown
 ) $status = 1
