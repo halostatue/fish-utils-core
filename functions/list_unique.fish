@@ -1,4 +1,5 @@
 # @halostatue/fish-utils-core:functions/list_unique.fish
+
 function list_unique -d 'Ensures that the values in the list are unique, preserving order'
     argparse t/type=+ d/directory f/file -- $argv
     or return 1
