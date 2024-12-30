@@ -1,4 +1,5 @@
 # @halostatue/fish-utils-core:functions/is_mac_terminal.fish
+
 function is_mac_terminal -d 'Checks that the current terminal is well-known'
     is_mac
     or return 1
