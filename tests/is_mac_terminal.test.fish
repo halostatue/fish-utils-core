@@ -1,4 +1,5 @@
-# @halostatue/fish-utils-core/tests/is_mac_terminal.test.fish:v3.1.1
+# @halostatue/fish-utils-core/tests/is_mac_terminal.test.fish:v3.1.2
+
 @echo (status basename)
 
 source (status dirname)"/../functions/__macos_version_to_comparable.fish"

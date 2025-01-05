@@ -1,4 +1,4 @@
-# @halostatue/fish-utils-core/functions/__macos_version_to_comparable.fish:v3.1.1
+# @halostatue/fish-utils-core/functions/__macos_version_to_comparable.fish:v3.1.2
 
 # Convert the macOS version to a comparable number. The special version 'current' or
 # '--current' will use sw_vers to produce a value.

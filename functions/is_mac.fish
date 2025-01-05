@@ -1,5 +1,4 @@
-# @halostatue/fish-utils-core/functions/is_mac.fish:v3.1.1
-# @halostatue/fish-utils-core:functions/is_mac.fish:v3.1.1
+# @halostatue/fish-utils-core/functions/is_mac.fish:v3.1.2
 
 function is_mac --description 'Checks that current OS is macOS, optionally at a minimum version'
     if set --query argv[1]

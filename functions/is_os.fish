@@ -1,5 +1,4 @@
-# @halostatue/fish-utils-core/functions/is_os.fish:v3.1.1
-# @halostatue/fish-utils-core:functions/is_os.fish:v3.1.1
+# @halostatue/fish-utils-core/functions/is_os.fish:v3.1.2
 
 function is_os --argument-names type --description 'Checks that current OS matches specified type by uname -s'
     test -z $type

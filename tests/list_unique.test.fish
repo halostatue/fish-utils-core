@@ -1,4 +1,5 @@
-# @halostatue/fish-utils-core/tests/list_unique.test.fish:v3.1.1
+# @halostatue/fish-utils-core/tests/list_unique.test.fish:v3.1.2
+
 @echo (status basename)
 
 source (status dirname)"/../functions/list_unique.fish"

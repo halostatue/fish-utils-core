@@ -1,5 +1,10 @@
 # fish-utils-core Changelog
 
+## 3.1.2 / 2025-01-05
+
+- Fix a bug in `list_clean` introduced in 3.1.1. It would have been caught if I
+  had run tests.
+
 ## 3.1.1 / 2025-01-05
 
 - Added version information to comment tags.

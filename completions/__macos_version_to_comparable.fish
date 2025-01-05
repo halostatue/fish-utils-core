@@ -1,4 +1,4 @@
-# @halostatue/fish-utils-core/completions/__macos_version_to_comparable.fish:v3.1.1
+# @halostatue/fish-utils-core/completions/__macos_version_to_comparable.fish:v3.1.2
 
 complete --erase --command __macos_version_to_comparable
 complete --command __macos_version_to_comparable --no-files
