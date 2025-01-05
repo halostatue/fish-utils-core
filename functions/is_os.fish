@@ -1,8 +1,9 @@
-# @halostatue/fish-utils-core:functions/is_os.fish
+# @halostatue/fish-utils-core/functions/is_os.fish:v3.1.1
+# @halostatue/fish-utils-core:functions/is_os.fish:v3.1.1
 
-function is_os -a type -d 'Checks that current OS matches specified type by uname -s'
+function is_os --argument-names type --description 'Checks that current OS matches specified type by uname -s'
     test -z $type
     and return 1
 
-    string match -qe $type (string lower (uname -s))
+    string match --quiet --entire $type (string lower (uname -s))
 end

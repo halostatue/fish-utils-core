@@ -1,5 +1,13 @@
 # fish-utils-core Changelog
 
+## 3.1.1 / 2025-01-05
+
+- Added version information to comment tags.
+- Switched to long flags where possible.
+- Switched to `set --function` instead of `set --local`.
+- Updated documentation.
+- Added tooling to the Justfile for easier release management.
+
 ## 3.1.0 / 2024-12-29
 
 - `is_mac_terminal`:

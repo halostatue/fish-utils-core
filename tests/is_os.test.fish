@@ -1,9 +1,10 @@
+# @halostatue/fish-utils-core/tests/is_os.test.fish:v3.1.1
 @echo (status basename)
 
 source (status dirname)"/../functions/is_os.fish"
 
 function teardown
-    mock -e uname
+    mock --erase uname
 end
 
 @test "is_os returns false when no arguments are provided" (

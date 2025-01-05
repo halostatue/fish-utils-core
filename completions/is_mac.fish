@@ -1,21 +1,21 @@
-# @halostatue/fish-utils-core/completions/is_mac.fish
+# @halostatue/fish-utils-core/completions/is_mac.fish:v3.1.1
 
-complete -e -c is_mac
-complete -c is_mac -f
-complete -c is_mac -a leopard -d Leopard
-complete -c is_mac -a snowleopard -d 'Snow Leopard'
-complete -c is_mac -a lion -d Lion
-complete -c is_mac -a mountainlion -d 'Mountain Lion'
-complete -c is_mac -a mavericks -d Mavericks
-complete -c is_mac -a yosemite -d Yosemite
-complete -c is_mac -a elcapitan -d 'El Capitan'
-complete -c is_mac -a sierra -d Sierra
-complete -c is_mac -a highsierra -d 'High Sierra'
-complete -c is_mac -a mojave -d Mojave
-complete -c is_mac -a catalina -d Catalina
-complete -c is_mac -a bigsur -d 'Big Sur'
-complete -c is_mac -a monterey -d Monterey
-complete -c is_mac -a ventura -d Ventura
-complete -c is_mac -a sonoma -d Sonoma
-complete -c is_mac -a sequoia -d Sequoia
-complete -c is_mac -a current -d 'Current macOS Version'
+complete --erase --command is_mac
+complete --command is_mac --no-files
+complete --command is_mac --arguments leopard --description Leopard
+complete --command is_mac --arguments snowleopard --description 'Snow Leopard'
+complete --command is_mac --arguments lion --description Lion
+complete --command is_mac --arguments mountainlion --description 'Mountain Lion'
+complete --command is_mac --arguments mavericks --description Mavericks
+complete --command is_mac --arguments yosemite --description Yosemite
+complete --command is_mac --arguments elcapitan --description 'El Capitan'
+complete --command is_mac --arguments sierra --description Sierra
+complete --command is_mac --arguments highsierra --description 'High Sierra'
+complete --command is_mac --arguments mojave --description Mojave
+complete --command is_mac --arguments catalina --description Catalina
+complete --command is_mac --arguments bigsur --description 'Big Sur'
+complete --command is_mac --arguments monterey --description Monterey
+complete --command is_mac --arguments ventura --description Ventura
+complete --command is_mac --arguments sonoma --description Sonoma
+complete --command is_mac --arguments sequoia --description Sequoia
+complete --command is_mac --arguments current --description 'Current macOS Version'

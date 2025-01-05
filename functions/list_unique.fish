@@ -1,23 +1,24 @@
-# @halostatue/fish-utils-core:functions/list_unique.fish
+# @halostatue/fish-utils-core/functions/list_unique.fish:v3.1.1
+# @halostatue/fish-utils-core:functions/list_unique.fish:v3.1.1
 
-function list_unique -d 'Ensures that the values in the list are unique, preserving order'
+function list_unique --description 'Ensures that the values in the list are unique, preserving order'
     argparse t/type=+ d/directory f/file -- $argv
     or return 1
 
     test (count $argv) -eq 0
     and return 0
 
-    set -l type_test
+    set --function type_test
 
-    if set -q _flag_directory || contains d -- $_flag_type
+    if set --query _flag_directory || contains d -- $_flag_type
         set type_test "$type_test"d
     end
 
-    if set -q _flag_file || contains f -- $_flag_type
+    if set --query _flag_file || contains f -- $_flag_type
         set type_test "$type_test"f
     end
 
-    set -l result
+    set --function result
 
     for item in $argv
         switch $type_test
@@ -34,7 +35,7 @@ function list_unique -d 'Ensures that the values in the list are unique, preserv
         end
 
         contains $item -- $result
-        or set -a result $item
+        or set --append result $item
     end
 
     echo $result

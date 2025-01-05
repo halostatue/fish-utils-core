@@ -1,8 +1,8 @@
-# @halostatue/fish-utils-core/functions/__macos_version_to_comparable.fish
+# @halostatue/fish-utils-core/functions/__macos_version_to_comparable.fish:v3.1.1
 
 # Convert the macOS version to a comparable number. The special version 'current' or
 # '--current' will use sw_vers to produce a value.
-function __macos_version_to_comparable -d 'Convert the macOS version to a comparable number'
+function __macos_version_to_comparable --description 'Convert the macOS version to a comparable number'
     is_os darwin
     or return 1
 
@@ -43,5 +43,5 @@ function __macos_version_to_comparable -d 'Convert the macOS version to a compar
             printf '%02d_%02d_%03d' (sw_vers -productVersion | string split '.')
         case '*'
             return 1
-    end | string replace -a _ ''
+    end | string replace --all _ ''
 end

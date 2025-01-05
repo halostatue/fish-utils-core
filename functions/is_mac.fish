@@ -1,11 +1,12 @@
-# @halostatue/fish-utils-core:functions/is_mac.fish
+# @halostatue/fish-utils-core/functions/is_mac.fish:v3.1.1
+# @halostatue/fish-utils-core:functions/is_mac.fish:v3.1.1
 
-function is_mac -d 'Checks that current OS is macOS, optionally at a minimum version'
-    if set -q argv[1]
-        set -l minimum_version (__macos_version_to_comparable $argv)
+function is_mac --description 'Checks that current OS is macOS, optionally at a minimum version'
+    if set --query argv[1]
+        set --local minimum_version (__macos_version_to_comparable $argv)
         or return
 
-        set -l current_version (__macos_version_to_comparable --current)
+        set --local current_version (__macos_version_to_comparable --current)
         or return
 
         test $current_version -ge $minimum_version

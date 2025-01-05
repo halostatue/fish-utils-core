@@ -1,10 +1,11 @@
+# @halostatue/fish-utils-core/tests/is_freebsd.test.fish:v3.1.1
 @echo (status basename)
 
 source (status dirname)"/../functions/is_os.fish"
 source (status dirname)"/../functions/is_freebsd.fish"
 
 function teardown
-    mock -e uname
+    mock --erase uname
 end
 
 @test "is_freebsd is true when the current OS is a FreeBSD" (

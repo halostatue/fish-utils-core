@@ -1,11 +1,12 @@
+# @halostatue/fish-utils-core/tests/is_linux.test.fish:v3.1.1
 @echo (status basename)
 
 source (status dirname)"/../functions/is_os.fish"
 source (status dirname)"/../functions/is_linux.fish"
 
 function teardown
-    mock -e uname
-    mock -e cat '*'
+    mock --erase uname
+    mock --erase cat '*'
 end
 
 @test "is_linux is true when the current OS is a Linux" (

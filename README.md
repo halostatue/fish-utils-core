@@ -1,8 +1,8 @@
 # halostatue/fish-utils-core
 
-Core utility functions for [fish shell][fish shell].
+Core utility functions for [fish shell][shell].
 
-[![Version][]](https://github.com/halostatue/fish-utils-core/releases)
+[![Version][version]](https://github.com/halostatue/fish-utils-core/releases)
 
 ## Installation
 
@@ -87,7 +87,7 @@ names are recognized from Leopard to Sequoia.
 
 [MIT](LICENCE.md)
 
-[fish shell]: https://fishshell.com 'friendly interactive shell'
+[shell]: https://fishshell.com 'friendly interactive shell'
 [version]: https://img.shields.io/github/tag/halostatue/fish-utils-core.svg?label=Version
 [fisher]: https://github.com/jorgebucaran/fisher
 [fish]: https://github.com/fish-shell/fish-shell

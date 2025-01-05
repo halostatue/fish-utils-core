@@ -1,6 +1,6 @@
-# @halostatue/fish-utils-core/completions/list_unique.fish
+# @halostatue/fish-utils-core/completions/list_unique.fish:v3.1.1
 
-complete -e -c list_unique
-complete -c list_unique -s t -l type -a 'd f' --description 'Test for directory or file' -x
-complete -c list_unique -s d -l directory --description 'test -d'
-complete -c list_unique -s f -l file --description 'test -f'
+complete --erase --command list_unique
+complete --command list_unique --short-option t --long-option type --arguments 'd f' --description 'Test for directory or file' --exclusive
+complete --command list_unique --short-option d --long-option directory --description 'type -d'
+complete --command list_unique --short-option f --long-option file --description 'type -f'

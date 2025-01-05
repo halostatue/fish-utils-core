@@ -1,3 +1,4 @@
+# @halostatue/fish-utils-core/tests/list_clean.test.fish:v3.1.1
 @echo (status basename)
 
 source (status dirname)"/../functions/list_clean.fish"

@@ -1,19 +1,19 @@
-# @halostatue/fish-utils-core/completions/is_mac_terminal.fish
+# @halostatue/fish-utils-core/completions/is_mac_terminal.fish:v3.1.1
 
-complete -e -c is_mac_terminal
-complete -c is_mac_terminal -f
+complete --erase --command is_mac_terminal
+complete --command is_mac_terminal --no-files
 
-complete -c is_mac_terminal -a alacritty -d Alacritty
-complete -c is_mac_terminal -a io.alacritty -d Alacritty
-complete -c is_mac_terminal -a iterm2 -d iTerm2
-complete -c is_mac_terminal -a com.googlecode.iterm2 -d iTerm2
-complete -c is_mac_terminal -a terminal -d Terminal.app
-complete -c is_mac_terminal -a terminal.app -d Terminal.app
-complete -c is_mac_terminal -a com.apple.terminal -d Terminal.app
-complete -c is_mac_terminal -a kitty -d kitty
-complete -c is_mac_terminal -a net.kovidgoyal.kitty -d kitty
-complete -c is_mac_terminal -a wezterm -d Wezterm
-complete -c is_mac_terminal -a com.github.wez.wezterm -d Wezterm
-complete -c is_mac_terminal -a ghostty -d GhosTTY
-complete -c is_mac_terminal -a ghost -d GhosTTY
-complete -c is_mac_terminal -a com.mitchellh.ghostty -d GhosTTY
+complete --command is_mac_terminal --arguments alacritty --description Alacritty
+complete --command is_mac_terminal --arguments io.alacritty --description Alacritty
+complete --command is_mac_terminal --arguments iterm2 --description iTerm2
+complete --command is_mac_terminal --arguments com.googlecode.iterm2 --description iTerm2
+complete --command is_mac_terminal --arguments terminal --description Terminal.app
+complete --command is_mac_terminal --arguments terminal.app --description Terminal.app
+complete --command is_mac_terminal --arguments com.apple.terminal --description Terminal.app
+complete --command is_mac_terminal --arguments kitty --description kitty
+complete --command is_mac_terminal --arguments net.kovidgoyal.kitty --description kitty
+complete --command is_mac_terminal --arguments wezterm --description Wezterm
+complete --command is_mac_terminal --arguments com.github.wez.wezterm --description Wezterm
+complete --command is_mac_terminal --arguments ghostty --description GhosTTY
+complete --command is_mac_terminal --arguments ghost --description GhosTTY
+complete --command is_mac_terminal --arguments com.mitchellh.ghostty --description GhosTTY

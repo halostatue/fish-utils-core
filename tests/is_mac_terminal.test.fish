@@ -1,3 +1,4 @@
+# @halostatue/fish-utils-core/tests/is_mac_terminal.test.fish:v3.1.1
 @echo (status basename)
 
 source (status dirname)"/../functions/__macos_version_to_comparable.fish"
@@ -6,7 +7,7 @@ source (status dirname)"/../functions/is_mac.fish"
 source (status dirname)"/../functions/is_mac_terminal.fish"
 
 function teardown
-    mock -e uname
+    mock --erase uname
 end
 
 @test "is_mac_terminal is false when the current OS is not a macOS" (

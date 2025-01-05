@@ -1,3 +1,4 @@
+# @halostatue/fish-utils-core/tests/is_mac.test.fish:v3.1.1
 @echo (status basename)
 
 source (status dirname)"/../functions/__macos_version_to_comparable.fish"
@@ -5,8 +6,8 @@ source (status dirname)"/../functions/is_os.fish"
 source (status dirname)"/../functions/is_mac.fish"
 
 function teardown
-    mock -e uname
-    mock -e sw_vers
+    mock --erase uname
+    mock --erase sw_vers
 end
 
 @test "is_mac is true when the current OS is a macOS" (
