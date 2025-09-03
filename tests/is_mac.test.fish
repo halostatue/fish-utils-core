@@ -1,4 +1,4 @@
-# @halostatue/fish-utils-core/tests/is_mac.test.fish:v3.1.2
+# @halostatue/fish-utils-core/tests/is_mac.test.fish:v3.2.0
 
 @echo (status basename)
 

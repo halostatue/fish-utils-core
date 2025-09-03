@@ -1,4 +1,4 @@
-# @halostatue/fish-utils-core/completions/is_mac_terminal.fish:v3.1.2
+# @halostatue/fish-utils-core/completions/is_mac_terminal.fish:v3.2.0
 
 complete --erase --command is_mac_terminal
 complete --command is_mac_terminal --no-files

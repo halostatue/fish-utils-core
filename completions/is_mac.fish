@@ -1,4 +1,4 @@
-# @halostatue/fish-utils-core/completions/is_mac.fish:v3.1.2
+# @halostatue/fish-utils-core/completions/is_mac.fish:v3.2.0
 
 complete --erase --command is_mac
 complete --command is_mac --no-files

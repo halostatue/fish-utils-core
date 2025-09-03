@@ -1,4 +1,4 @@
-# @halostatue/fish-utils-core/functions/list_clean.fish:v3.1.2
+# @halostatue/fish-utils-core/functions/list_clean.fish:v3.2.0
 
 function list_clean --description 'Remove first list values from second list values'
     set --query argv[1]

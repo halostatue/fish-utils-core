@@ -1,5 +1,9 @@
 # fish-utils-core Changelog
 
+## 3.2.0 / 2025-09-02
+
+- Add support for macOS Tahoe to `__macos_version_to_comparable`.
+
 ## 3.1.2 / 2025-01-05
 
 - Fix a bug in `list_clean` introduced in 3.1.1. It would have been caught if I

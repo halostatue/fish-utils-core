@@ -1,4 +1,4 @@
-# @halostatue/fish-utils-core/functions/list_unique.fish:v3.1.2
+# @halostatue/fish-utils-core/functions/list_unique.fish:v3.2.0
 
 function list_unique --description 'Ensures that the values in the list are unique, preserving order'
     argparse t/type=+ d/directory f/file -- $argv

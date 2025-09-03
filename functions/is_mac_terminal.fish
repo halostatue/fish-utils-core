@@ -1,4 +1,4 @@
-# @halostatue/fish-utils-core/functions/is_mac_terminal.fish:v3.1.2
+# @halostatue/fish-utils-core/functions/is_mac_terminal.fish:v3.2.0
 
 function is_mac_terminal --description 'Checks that the current terminal is well-known'
     is_mac
