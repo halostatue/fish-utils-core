@@ -1,4 +1,4 @@
-# @halostatue/fish-utils-core/tests/is_freebsd.test.fish:v3.2.0
+# @halostatue/fish-utils-core/tests/is_freebsd.test.fish:v3.3.0
 
 @echo (status basename)
 

@@ -1,4 +1,4 @@
-# @halostatue/fish-utils-core/functions/is_linux.fish:v3.2.0
+# @halostatue/fish-utils-core/functions/is_linux.fish:v3.3.0
 
 function is_linux --description 'Check if the current OS is Linux with optional flavour checking'
     is_os linux

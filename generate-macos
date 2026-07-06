@@ -1,0 +1,99 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "erb"
+require "yaml"
+
+FUNCTION_TEMPLATE = <<~ERB
+  # @halostatue/fish-utils-core/functions/__macos_version_to_comparable.fish
+
+  # Convert the macOS version to a comparable number. The special version 'current' or
+  # '--current' will use sw_vers to produce a value.
+  function __macos_version_to_comparable --description 'Convert the macOS version to a comparable number'
+      is_os darwin
+      or return 1
+
+      switch (string lower -- $argv)
+  <% entries.each do |e| -%>
+          case <%= e[:case_parts] %>
+              printf <%= e[:comparable] %>
+  <% end -%>
+          case current --current
+              printf '%02d_%02d_%03d' (sw_vers -productVersion | string split '.')
+          case '*'
+              return 1
+      end | string replace --all _ ''
+  end
+ERB
+
+COMPLETION_TEMPLATE = <<~ERB
+  # @halostatue/fish-utils-core/completions/<%= command %>.fish
+
+  complete --erase --command <%= command %>
+  complete --command <%= command %> --no-files
+  <% entries.each do |e| -%>
+  complete --command <%= command %> --arguments <%= e[:slug] %> --description '<%= e[:name] %> (<%= e[:display_version] %>)'
+  <% end -%>
+  complete --command <%= command %> --arguments current --description 'Current macOS Version'
+ERB
+
+def case_parts(name, versions)
+  versions.flat_map {
+    version = it.to_s
+
+    if version.end_with?(".*")
+      raise "Invalid version for #{name}: it must not end with '.*'"
+    end
+
+    [version, "'#{version}.*'"]
+  }
+end
+
+def display_version(versions) = versions.max
+
+def render(template, binding_source) = ERB.new(template, trim_mode: "-").result(binding_source)
+
+versions = YAML.safe_load_file(File.join(__dir__, "versions.yaml"))
+
+entries = versions.map do |v|
+  name = v["name"]
+  full_name = name.downcase
+  slug = full_name.delete(" ")
+
+  if name == full_name
+    raise "Invalid configuration for #{name}: name should have capitals (Golden Gate)"
+  end
+
+  versions = Array(v["version"])
+
+  parts = case_parts(name, versions)
+  parts << slug
+  parts << "'#{full_name}'" if full_name != slug
+
+  {
+    name: name,
+    slug: slug,
+    case_parts: parts.join(" "),
+    comparable: v["comparable"],
+    display_version: display_version(versions)
+  }
+end
+
+# Generate function
+File.write(
+  File.join(__dir__, "functions", "__macos_version_to_comparable.fish"),
+  render(FUNCTION_TEMPLATE, binding)
+)
+
+# Generate completions
+%w[__macos_version_to_comparable is_mac].each do |command|
+  File.write(
+    File.join(__dir__, "completions", "#{command}.fish"),
+    render(COMPLETION_TEMPLATE, binding)
+  )
+end
+
+puts "Generated:"
+puts "  functions/__macos_version_to_comparable.fish"
+puts "  completions/__macos_version_to_comparable.fish"
+puts "  completions/is_mac.fish"

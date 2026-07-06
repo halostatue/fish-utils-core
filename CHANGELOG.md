@@ -1,5 +1,9 @@
 # fish-utils-core Changelog
 
+## 3.3.0 / 2026-07-05
+
+- Add support for macOS Golden Gate.
+
 ## 3.2.0 / 2025-09-02
 
 - Add support for macOS Tahoe to `__macos_version_to_comparable`.

@@ -1,4 +1,4 @@
-# @halostatue/fish-utils-core/functions/__macos_version_to_comparable.fish:v3.2.0
+# @halostatue/fish-utils-core/functions/__macos_version_to_comparable.fish:v3.3.0
 
 # Convert the macOS version to a comparable number. The special version 'current' or
 # '--current' will use sw_vers to produce a value.
@@ -41,6 +41,8 @@ function __macos_version_to_comparable --description 'Convert the macOS version 
             printf 15_00_000
         case 26 '26.*' tahoe
             printf 26_00_000
+        case 27 '27.*' goldengate 'golden gate'
+            printf 27_00_000
         case current --current
             printf '%02d_%02d_%03d' (sw_vers -productVersion | string split '.')
         case '*'
