@@ -1,6 +1,7 @@
 # halostatue/fish-utils-core
 
 [![Version][version]](https://github.com/halostatue/fish-utils-core/releases)
+[![MIT](https://img.shields.io/badge/licence-MIT-blue?style=for-the-badge "MIT")](https://github.com/halostatue/fish-utils-core/blob/main/LICENCE.md)
 
 Core utility functions for [fish shell][shell].
 

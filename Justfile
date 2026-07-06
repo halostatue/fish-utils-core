@@ -79,6 +79,10 @@ tag version:
         git tag v{{ version }}
     end
 
+# Generate the macOS comparison function and completions
+generate-macos:
+    @ruby generate-macos
+
 # Format fish files
 fmt:
     @fish_indent --write **.fish
