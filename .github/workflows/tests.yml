@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
+        uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2 # v2.22.2
         with:
           egress-policy: block
           allow-sudo: false
@@ -47,11 +47,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: fish-shop/install-fish-shell@948417ca21b8789ef8954625db3035148e53ac74 # v2.1.29
-      - uses: fish-shop/indent-check@f73ce7c50dcb1bd881d70b91dd7986db427dc063 # v2.2.120
-      - uses: fish-shop/syntax-check@0fb845a43205c9b67827d8f7af0b6b7cfb59095d # v2.2.118
-      - uses: fish-shop/install-plugin@450a337f4e2d613c2b8cf66bc0454801ea38d4c3 # v2.3.122
+      - uses: fish-shop/install-fish-shell@4ebb4db83a91a292496477609f3c353629bb69d8 # v2.1.32
+      - uses: fish-shop/indent-check@0aa851d0238479060c14bd4bb6b094cd846927f7 # v2.2.123
+      - uses: fish-shop/syntax-check@2be227b2c33b6a5db3cfb5aa6305bdcb65a4356a # v2.2.121
+      - uses: fish-shop/install-plugin@bc07c7b9c8b768062b2a54cf09fb9cc91900922b # v2.3.125
         with:
           plugin-manager: fisher
           plugins: IlanCosman/clownfish
-      - uses: fish-shop/run-fishtape-tests@9f0e79359f472f05781a1eedd5c47013159db9de # v2.3.122
+      - uses: fish-shop/run-fishtape-tests@b27ffef8d7f6b2d9ed7bd28f502d5f0bed179182 # v2.3.125
